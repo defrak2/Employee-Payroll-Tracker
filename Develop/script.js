@@ -8,7 +8,7 @@ let salaryNumber = [];
 
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
-  do {
+  while (confirm("Add Employee Data?")) {
     let employees = {
       firstName: prompt("Employees first name:"),
       lastName: prompt("Employees last name:"),
@@ -16,13 +16,14 @@ const collectEmployees = function () {
     };
     let salaryNumber = Number(employees.salary);
     employeesArray.push(employees);
-
+    
     console.log(employees.firstName);
     console.log(employees.lastName);
     console.log(salaryNumber);
     console.log(employees);
     console.log(employeesArray);
-  } while (confirm("Continue?") == true);
+  } 
+  return employeesArray;
 };
 
 // Display the average salary
@@ -100,3 +101,7 @@ const trackEmployeeData = function () {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener("click", trackEmployeeData);
+
+
+
+
