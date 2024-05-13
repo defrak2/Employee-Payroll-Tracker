@@ -9,13 +9,13 @@ let salaryNumber = [];
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
   while (confirm("Add Employee Data?")) {
-    let employees = {
+    let currentEmployee = {
       firstName: prompt("Employees first name:"),
       lastName: prompt("Employees last name:"),
-      salary: prompt("Employees salary:"),
+      salary: Number(prompt("Employees salary:")),
     };
-    let salaryNumber = Number(employees.salary);
-    employeesArray.push(employees);
+
+    employeesArray.push(currentEmployee);
   }
   return employeesArray;
 };
