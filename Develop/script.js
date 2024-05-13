@@ -16,35 +16,36 @@ const collectEmployees = function () {
     };
     let salaryNumber = Number(employees.salary);
     employeesArray.push(employees);
-    
+
     console.log(employees.firstName);
     console.log(employees.lastName);
     console.log(salaryNumber);
     console.log(employees);
     console.log(employeesArray);
-  } 
+  }
   return employeesArray;
 };
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
-  const calculatedTotalSalary = function (employeesArray){
-    let totalSalary = 0;
-    for (let i = 0; i<employeesArray.length; i ++) {
-      const currentNumber = employeesArray[i];
-      sum += currentNumber;
-    }
-    calculatedTotalSalary();
+  let totalSalary = 0;
+  for (let i = 0; i < employeesArray.length; i++) {
+    totalSalary += Number(employeesArray[i].salary);
   }
-  displayAverageSalary();
-  console.log(displayAverageSalary);
-  console.log(employeesArray.length);
-};
+  const averageSalary = totalSalary / employeesArray.length;
 
+  console.log(
+    `The average salary is: ${averageSalary.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    })}, which is out of ${employeesArray.length} employees.`
+  );
+};
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+
 };
 
 /*
@@ -112,7 +113,3 @@ const trackEmployeeData = function () {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener("click", trackEmployeeData);
-
-
-
-
